@@ -2,6 +2,14 @@ package prototype
 
 import "testing"
 
+// This is a Go test function named `TestClone` that tests the cloning functionality of a shirt cache. Here's a succinct explanation:
+// 1. It retrieves a shirt cache using `GetShirtsCloner()` and checks if it's not nil.
+// 2. It clones a white shirt from the cache using `GetClone(White)` and checks if the cloned shirt is not equal to the original prototype.
+// 3. It modifies the cloned shirt's SKU and then clones another white shirt from the cache.
+// 4. It checks if the two cloned shirts have different SKUs and are not the same object.
+// 5. It logs information about the cloned shirts, including their memory positions.
+// 6. It tests cloning other shirt models (Black, Blue) and an invalid model (10), expecting an error for the invalid model.
+// The test ensures that the shirt cache correctly clones shirts, modifies them independently, and handles invalid models.
 func TestClone(t *testing.T) {
 	shirtCache := GetShirtsCloner()
 	if shirtCache == nil {

@@ -2,6 +2,12 @@ package singleton
 
 import "testing"
 
+// This is a test function in Go that verifies the behavior of a singleton instance. Here's a brief explanation:
+// 1. It gets an instance of the singleton (`counter1`) and checks if it's not nil.
+// 2. It increments the counter using `AddOne()` and checks if the count is 1.
+// 3. It gets another instance of the singleton (`counter2`) and checks if it's the same instance as `counter1`.
+// 4. It increments the counter again using `AddOne()` and checks if the count is 2.
+// The test ensures that the singleton instance is correctly initialized, incremented, and that multiple calls to `GetInstance()` return the same instance.
 func TestGetInstance(t *testing.T) {
 	counter1 := GetInstance()
 	if counter1 == nil {
