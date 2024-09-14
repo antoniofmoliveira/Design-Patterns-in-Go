@@ -8,6 +8,9 @@ import (
 	"testing"
 )
 
+// captureBarrierOutput captures the output of the barrier function by
+// redirecting os.Stdout to a pipe and copying from it. It's meant to be used
+// in tests.
 func captureBarrierOutput(endpoints ...string) string {
 	reader, writer, _ := os.Pipe()
 	os.Stdout = writer
@@ -23,6 +26,11 @@ func captureBarrierOutput(endpoints ...string) string {
 	return temp
 }
 
+// This is a Go test function named `TestBarrier`. It contains three sub-tests:
+// 1. "Correct endpoints": Tests that the `barrier` function correctly handles valid endpoints.
+// 2. "One endpoint incorrect": Tests that the `barrier` function correctly handles a malformed URL.
+// 3. "Very short timeout": Tests that the `barrier` function correctly handles a very short timeout.
+// Each sub-test calls the `captureBarrierOutput` function with different endpoints and checks the output for expected strings. If the output does not contain the expected strings, the test fails.
 func TestBarrier(t *testing.T) {
 	t.Run("Correct endpoints", func(t *testing.T) {
 		endpoints := []string{"http://httpbin.org/headers",

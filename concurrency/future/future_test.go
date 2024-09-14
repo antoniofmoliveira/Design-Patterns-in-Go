@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+// timeout logs "Timeout!" after 1 second and calls t.Fail().
+// It must be called as a goroutine.
 func timeout(t *testing.T, wg *sync.WaitGroup) {
 	time.Sleep(time.Second)
 	t.Log("Timeout!")
@@ -14,6 +16,13 @@ func timeout(t *testing.T, wg *sync.WaitGroup) {
 	wg.Done()
 }
 
+
+
+// This is a Go test function that exercises the `MaybeString` type's `Execute` method in three different scenarios:
+// 1. **Success result**: The `Execute` method is called with a function that returns a successful string result ("Hello World!"). The `Success` callback is expected to be called with this result.
+// 2. **Failed result**: The `Execute` method is called with a function that returns an error. The `Fail` callback is expected to be called with this error.
+// 3. **Closure Success result**: The `Execute` method is called with a function that returns a successful string result, but this function is created using a closure (`setContext("Hello")`). The `Success` callback is expected to be called with this result.
+// In each scenario, a timeout goroutine is started to ensure the test fails if the `Execute` method doesn't complete within a certain time. The `WaitGroup` is used to synchronize the test and ensure that the `Execute` method has completed before the test finishes.
 func TestStringOrError_Execute(t *testing.T) {
 	future := &MaybeString{}
 	t.Run("Success result", func(t *testing.T) {

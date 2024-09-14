@@ -7,6 +7,7 @@ import (
 	"testing"
 )
 
+// This is a test function in Go, `Test_Dispatcher`, which tests the functionality of a `Dispatcher` by launching 3 workers and making 10 requests to the dispatcher. The test checks if the requests are processed correctly by the workers and if the responses match a specific pattern.
 func Test_Dispatcher(t *testing.T) {
 	// pasted code from main function
 	bufferSize := 100
