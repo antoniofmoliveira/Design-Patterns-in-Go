@@ -1,7 +1,7 @@
 package shapes
 
 import (
-	"srcgo/github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
+	"github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
 )
 
 type TextSquare struct {

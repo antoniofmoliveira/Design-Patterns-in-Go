@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"srcgo/github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy/shapes"
+	"github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy/shapes"
 )
 
 var output = flag.String("output", "text", "The output to use between 'text' and 'image' file")

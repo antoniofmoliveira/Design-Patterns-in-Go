@@ -3,7 +3,8 @@ package shapes
 import (
 	"fmt"
 	"os"
-	"srcgo/github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
+
+	"github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
 )
 
 const (

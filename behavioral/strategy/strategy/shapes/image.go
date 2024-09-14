@@ -8,7 +8,8 @@ import (
 	"image/draw"
 	"image/jpeg"
 	"io"
-	"srcgo/github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
+
+	"github.com/antoniofmoliveira/patterns/behavioral/strategy/strategy"
 )
 
 type ImageSquare struct {
